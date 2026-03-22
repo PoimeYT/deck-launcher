@@ -1,0 +1,12 @@
+{
+  "name": "mc-launcher",
+  "version": "1.0.0",
+  "description": "Minecraft Launcher with controller-friendly UI",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^29.0.0"
+  }
+}

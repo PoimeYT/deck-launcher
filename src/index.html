@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MC Launcher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Title bar -->
+  <div class="titlebar">
+    <span class="titlebar-title">Deck Launcher</span>
+    <div class="titlebar-controls">
+      <button onclick="window.launcher.minimize()">─</button>
+      <button onclick="window.launcher.maximize()">□</button>
+      <button class="close-btn" onclick="window.launcher.close()">✕</button>
+    </div>
+  </div>
+
+  <!-- Main layout -->
+  <div class="layout">
+
+    <!-- Sidebar nav -->
+    <nav class="sidebar">
+      <ul>
+        <li class="nav-item active" data-tab="home" tabindex="0">🏠 Home</li>
+        <li class="nav-item" data-tab="versions" tabindex="0">📦 Versions</li>
+        <li class="nav-item" data-tab="mods" tabindex="0">🔧 Mods</li>
+        <li class="nav-item" data-tab="settings" tabindex="0">⚙ Settings</li>
+      </ul>
+    </nav>
+
+    <!-- Content area -->
+    <main class="content">
+
+      <!-- Home tab -->
+      <div class="tab active" id="tab-home">
+        <h1 class="welcome">Welcome back, <span class="accent">Player</span></h1>
+        <p class="subtitle">Ready to play?</p>
+
+        <div class="version-selector">
+          <label>Version</label>
+          <select id="version-select">
+            <option>1.21.4</option>
+            <option>1.21.1</option>
+            <option>1.20.4</option>
+            <option>1.19.4</option>
+          </select>
+        </div>
+
+        <button class="play-btn" id="play-btn">▶ PLAY</button>
+        <p class="status" id="status-text"></p>
+      </div>
+
+      <!-- Versions tab -->
+      <div class="tab" id="tab-versions">
+        <h2>Installed Versions</h2>
+        <ul class="version-list">
+          <li tabindex="0">1.21.4 — Vanilla</li>
+          <li tabindex="0">1.21.4 — Fabric</li>
+          <li tabindex="0">1.20.4 — Forge</li>
+        </ul>
+      </div>
+
+      <!-- Mods tab -->
+      <div class="tab" id="tab-mods">
+        <h2>Mods</h2>
+        <p class="muted">No mods installed yet.</p>
+      </div>
+
+      <!-- Settings tab -->
+      <div class="tab" id="tab-settings">
+        <h2>Settings</h2>
+        <div class="setting-row">
+          <label>Java Path</label>
+          <input type="text" placeholder="/usr/bin/java" />
+        </div>
+        <div class="setting-row">
+          <label>RAM (MB)</label>
+          <input type="number" value="2048" />
+        </div>
+        <div class="setting-row">
+          <label>Game Directory</label>
+          <input type="text" placeholder="~/.minecraft" />
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
